@@ -2,6 +2,27 @@
 
 `$ vue create vue-echarts`
 
+## deploy
+
+`yarn add gh-pages -D`
+
+package.json
+
+```js
+"homepage": "https://jacobhsu.github.io/vue-echarts/",
+  "scripts": {
+    "deploy": "yarn build && gh-pages -d dist"
+  },
+```
+
+vue.config.js
+
+```js
+module.exports = {
+    publicPath: 'vue-echarts'
+}
+```
+
 ## Project setup
 ```
 yarn install
