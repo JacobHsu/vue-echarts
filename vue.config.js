@@ -1,3 +1,13 @@
 module.exports = {
-    publicPath: 'vue-echarts'
-}
+    publicPath: process.env.NODE_ENV === 'production' ? './vue-echarts' : '/',
+    outputDir: 'demo',
+    transpileDependencies: ['resize-detector'],
+    chainWebpack: config => {
+      config
+        .entry('app')
+        .clear()
+        .add('./src/demo/main.js')
+
+    }
+  }
+  

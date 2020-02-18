@@ -19,9 +19,15 @@ vue.config.js
 
 ```js
 module.exports = {
-    publicPath: 'vue-echarts'
+     publicPath: process.env.NODE_ENV === 'production' ? './vue-echarts' : '/',
 }
 ```
+
+## References
+
+[Vue CLI](https://cli.vuejs.org/) Standard Tooling for Vue.js Development  
+[vue-charts](https://ecomfe.github.io/vue-echarts/demo/) ECharts component for Vue.js.
+ecomfe/[vue-echarts](https://github.com/ecomfe/vue-echarts)
 
 ## Project setup
 ```
