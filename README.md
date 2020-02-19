@@ -28,6 +28,9 @@ module.exports = {
 [Vue CLI](https://cli.vuejs.org/) Standard Tooling for Vue.js Development  
 [vue-charts](https://ecomfe.github.io/vue-echarts/demo/) ECharts component for Vue.js.
 ecomfe/[vue-echarts](https://github.com/ecomfe/vue-echarts)
+`yarn add lodash resize-detector` `yarn add echarts -D`
+
+[editor.html?c=map-polygon](https://www.echartsjs.com/examples/zh/editor.html?c=map-polygon)  
 
 ## Project setup
 ```
