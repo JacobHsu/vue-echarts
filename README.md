@@ -32,6 +32,10 @@ ecomfe/[vue-echarts](https://github.com/ecomfe/vue-echarts)
 
 [editor.html?c=map-polygon](https://www.echartsjs.com/examples/zh/editor.html?c=map-polygon)  
 
+# stylus
+
+`yarn add stylus stylus-loader`
+
 ## Project setup
 ```
 yarn install
