@@ -32,6 +32,8 @@ ecomfe/[vue-echarts](https://github.com/ecomfe/vue-echarts)
 
 [editor.html?c=map-polygon](https://www.echartsjs.com/examples/zh/editor.html?c=map-polygon)  
 
+[vue中使用echarts来绘制世界地图和中国地图](https://www.cnblogs.com/ldlx-mars/p/9242250.html)
+
 # stylus
 
 `yarn add stylus stylus-loader`

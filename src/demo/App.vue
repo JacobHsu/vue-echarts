@@ -28,6 +28,15 @@
         >
       </p>
       <p><button :disabled="flightLoaded" @click="loadFlights">Load</button></p>
+      <figure>
+        <chart
+          ref="worldMap"
+          :init-options="initOptions"
+          :options="worldMapOptions"
+          autoresize
+        />
+      </figure>
+      <br>
       <figure style="background-color: #003;">
         <chart
           ref="flight"
@@ -42,6 +51,7 @@
 </template>
 
 <script>
+import buildMapConfig from './data/config_map'
 import ECharts from '../components/ECharts.vue'
 import 'echarts/lib/chart/map'
 import 'echarts/map/js/world'
@@ -77,8 +87,65 @@ export default {
         flight: true
       },
       flightLoaded: false,
-      flightOptions: null
+      flightOptions: null,
+      worldMapOptions: null
     }
+  },
+  mounted () {
+    const { worldMap } = this.$refs
+    worldMap.hideLoading()
+
+    this.worldMapOptions = {
+      title: {
+        text: 'World Map',
+        left: 'center',
+        textStyle: {
+          color: '#eee'
+        }
+      },
+      backgroundColor: 'LightBlue',
+      geo: {
+        map: 'world',
+        left: 0,
+        right: 0,
+        silent: true,
+        // label: {
+        //   normal: {
+        //     show: true, // 是否顯示對應地名
+        //     textStyle: {
+        //       color: 'rgba(0,0,0,0.4)'
+        //     }
+        //   }
+        // },
+        itemStyle: {
+          normal: {
+            borderColor: 'Gray',
+            color: 'Cornsilk'
+          }
+        }
+      },
+      tooltip: {}, // 鼠標移到圖裡面的浮動提示框
+      series: [
+        {
+          type: 'lines',
+          coordinateSystem: 'geo',
+          data: '',
+          large: true,
+          largeThreshold: 100,
+          lineStyle: {
+            normal: {
+              opacity: 0.05,
+              width: 0.5,
+              curveness: 0.3
+            }
+          },
+          // 设置混合模式为叠加
+          blendMode: 'lighter'
+        },
+        buildMapConfig() 
+      ]
+    }
+
   },
   methods: {
     loadFlights () {
